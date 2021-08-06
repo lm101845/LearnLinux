@@ -1,0 +1,8 @@
+Nginx就不单独再创建一个仓库了，就放到这里吧。
+
+Debian系的Ubuntu,Redhat系的CentOS,这些都是GNU/Linux操作系统的发行版.
+
+Nginx是一个跨平台的Web服务器【软件】,可以运行在Unix-like系统(比如Linux/*BSD/macOS等)上,
+也可以运行在Windows上,甚至交叉编译后可以运行在Android/iOS这些设备上.
+
+nginx是一个提供web服务或者反向代理服务的一个程序，那两个是操作系统，都不是一类
