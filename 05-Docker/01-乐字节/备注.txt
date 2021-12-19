@@ -1,0 +1,5 @@
+B站视频链接：https://www.bilibili.com/video/BV14y4y1m7pu?p=2&spm_id_from=pageDriver
+
+学一下docker，把自己的项目一个个放到docker里面，然后再部署到阿里云服务器上。
+
+看到第24节
