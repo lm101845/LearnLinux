@@ -58,3 +58,56 @@
 * 现在我们演示一下不同端口号的虚拟主机
 
 * 当改完nginx.conf配置后，我们需要重启一下Nginx或者reload一下Nginx。命令为`systemctl reload nginx`，然后看它是否起来了，命令为`status nginx`
+
+* nginx.conf现在我的配置如下：
+
+  ~~~
+  worker_processes  1;
+  
+  events {
+      worker_connections  1024;
+  }
+  
+  http {
+      include       mime.types;
+      default_type  application/octet-stream;
+      sendfile        on;
+      #keepalive_timeout  0;
+      keepalive_timeout  65;
+      #虚拟主机1 vhost
+      server {
+          listen       80;
+          server_name  localhost;   #域名，主机名 
+          location / {
+              root   /www/www;
+              index  index.html index.htm;
+          }
+          error_page   500 502 503 504  /50x.html;
+          location = /50x.html {
+              root   html;
+          }
+      }
+  
+      #虚拟主机2 vhost
+      server {
+          listen       8000;
+          server_name  project;   #域名，主机名 
+          location / {
+              root   /www/project;
+              index  index.html index.htm;
+          }
+          error_page   500 502 503 504  /50x.html;
+          location = /50x.html {
+              root   html;
+          }
+      }
+  
+  }
+  ~~~
+
+* 正向代理与反向代理：
+  * 站在客户端的角度：
+    * 代理服务器帮客户端代理：正向代理
+      * 你家的仆人帮你去外面拿东西
+    * 代理服务器帮服务端代理：反向代理
+      * 快递公司的快递员帮你送快递
