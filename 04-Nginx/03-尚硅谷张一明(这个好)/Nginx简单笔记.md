@@ -57,7 +57,7 @@
 
 * 现在我们演示一下不同端口号的虚拟主机
 
-* 当改完nginx.conf配置后，我们需要重启一下Nginx或者reload一下Nginx。命令为`systemctl reload nginx`，然后看它是否起来了，命令为`status nginx`
+* 当改完nginx.conf配置后，我们需要重启一下Nginx或者reload一下Nginx。命令为`systemctl reload nginx`或者`./nginx -s reload`（首先需要`cd /usr/local/nginx/sbin`或者配一下环境变量），然后看它是否起来了，命令为`status nginx`或`./nginx`
 
 * nginx.conf现在我的配置如下：
 
